@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(240, 78%, 98%);
+  color: hsl(232, 13%, 33%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  background-image: url("./images/bg-top.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top right;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  background-image: url("./images/bg-bottom.svg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  z-index: -1;
+}
+.container {
+  width: 1200px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: hsl(233, 13%, 49%);
+}
+
+.toggle-container {
+  color: hsl(234, 14%, 74%);
+  margin-bottom: 40px;
+}
+
+.price-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  color: hsl(233, 13%, 49%);
+}
+
+.price-box-premium {
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  color: white;
+  transform: scale(1.15);
+}
+
+.price-box.price-box-premium > * {
+  transform: scale(0.869);
+}
+
+.price-box h4 {
+  margin: 0;
+}
+
+.price-box p {
+  font-size: 4em;
+  margin: 15px 0;
+  width: 250px;
+}
+
+.price-box .monthly {
+  display: none;
+}
+
+.show-monthly .price-box .monthly {
+  display: block;
+}
+
+.show-monthly .price-box .annually {
+  display: none;
+}
+
+.price-box ul {
+  padding: 0;
+  border-top: 1px solid hsl(234, 14%, 74%);
+  list-style-type: none;
+}
+
+.price-box ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid hsl(234, 14%, 74%);
+  font-size: 14px;
+}
+
+.price-box button {
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  color: white;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.price-box.price-box-premium button {
+  background-image: none;
+  background-color: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.price-box.price-box-premium ul,
+.price-box.price-box-premium ul li {
+  border-color: grey;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.toggle-container label {
+  background-image: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  width: 60px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.toggle-container input {
+  position: absolute;
+  left: -9999px;
+}
+
+.toggle-container label .ball {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  transition: transform 0.4s ease;
+}
+
+.toggle-container input:checked + label .ball {
+  transform: translateX(30px);
+}
